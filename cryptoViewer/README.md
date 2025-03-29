@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# Crypto App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripcion
 
-Currently, two official plugins are available:
+Esta aplicacion permite a los usuarios consultar los precios actuales de las criptomonedas mas populares. Muestra informacion relevante como el precio actual en USD y la capitalización de mercado de cada criptomoneda. La interfaz está diseñada con Material UI y permite la visualización de datos en una tabla.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La aplicación también incluye una sección que genera una criptomoneda llamada "MariVerse" que cambia cada minuto al hacerse un refetch. Los datos se obtienen de la API de CoinGecko, que ofrece información precisa y actualizada sobre las criptomonedas.
 
-## Expanding the ESLint configuration
+## Caracteristicas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Tabla de Criptomonedas**: Muestra las criptomonedas más populares con su precio actual y capitalización de mercado.
+- **Datos en tiempo real**: La aplicación se actualiza automáticamente cada minuto para reflejar los cambios en los precios y la capitalización de mercado.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tecnologias utilizadas
+
+- **React**: Framework de JavaScript para construir la interfaz de usuario.
+- **Material UI**: Biblioteca de componentes de interfaz de usuario que facilita la creación de una interfaz atractiva y funcional.
+- **React Query**: Librería para el manejo de datos remotos y el caching, que ayuda a gestionar las consultas a la API.
+- **Axios**: Cliente HTTP para hacer solicitudes a la API de CoinGecko.
+- **CoinGecko API**: API que proporciona información sobre las criptomonedas más populares, como su precio y capitalización de mercado.
+
+## Instalación
+
+### Clonar el repositorio
+
+```bash
+git clone https://github.com/Mariana-Sanchez21/Betriax
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Instalar dependencias
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Iniciar la aplicacion
+
+```bash
+npm run dev
 ```
